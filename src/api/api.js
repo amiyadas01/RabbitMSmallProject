@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const GetApi = async () => {
-  const response = await axios.get("https://api.github.com/users");
+const GetApi = async (url) => {
+  const response = await axios.get(url);
 
   return (response.data || [])
 };

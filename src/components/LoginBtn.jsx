@@ -8,14 +8,14 @@ function LoginBtn() {
       {isAuthenticated ? (
         <button
           onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          className=" hover:text-red-700 text-red-500 font-bold py-2 px-4 rounded"
         >
           Log Out
         </button>
       ) : (
         <button
           onClick={() => loginWithRedirect()}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          className=" hover:text-red-700 text-red-500 font-bold py-2 px-4 rounded"
         >
           Log In
         </button>
