@@ -1,12 +1,44 @@
-# React + Vite
+# User Data Fetching, Caching & Authentication with Auth0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Project Overview
+This project demonstrates how to:
+- Fetch user data from an API using axios
+- Implement *local storage caching* to prevent unnecessary API calls
+- Apply a *search filter* on fetched data
+- Display user details dynamically
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Tech Stack
+- *React.js* (UI)
+- *Axios* (API calls)
+- *Local Storage* (Caching)
+- *Auth0* (Authentication)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚡ Features
+
+### 1️⃣ API Fetching with Caching Mechanism
+- *Users list* is fetched from https://api.github.com/users.
+- Data is stored in *Local Storage* with a *10-second cache expiry*.
+- If the cache is valid, API is *not* called again.
+
+### 2️⃣ Search Filter on Users
+- Users can be searched using their **GitHub username (login).
+- The search field filters users in real-time *without reloading the page*.
+
+---
+
+## 🎯 Extra Features
+
+### 1️⃣ Fetch & Display Followers Count
+- Each user’s *followers count* is fetched and displayed.
+- This provides additional insights into user popularity.
+
+### 2️⃣ Authentication with Auth0
+- *Auth0* is used for user authentication.
+- Users can log in/log out securely.
+- The authentication UI can be *customized*.
+
+---
