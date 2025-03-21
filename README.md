@@ -33,12 +33,12 @@ This project demonstrates how to:
 ## 🎯 Extra Features
 
 ### 1️⃣ Fetch & Display Followers Count
-- Each user’s *followers count* is fetched and displayed.
+- Each user’s *followers* and *followings* are fetched and displayed.
 - This provides additional insights into user popularity.
 
 ### 2️⃣ Authentication with Auth0
 - *Auth0* is used for user authentication.
 - Users can log in/log out securely.
-- The authentication UI can be *customized*.
+- The authentication UI also *customized* for the company .
 
 ---
