@@ -4,7 +4,7 @@ import FollowData from "./FollowData";
 function DataCard({ item, width, height, Followers }) {
   const [followers, setFollowers] = useState(false);
   const [following, setFollowing] = useState(false);
-
+  //filter the following url
   const filterUrl = (url) => {
     const newUrl = url.split("{")[0];
     return newUrl;
@@ -22,8 +22,9 @@ function DataCard({ item, width, height, Followers }) {
           />
         </div>
         <div className="flex flex-col justify-between text-2xl items-center ">
-           User Name : {item.login}
+          User Name : {item.login}
           <div>
+            {/* check the presence of the followers and show button  */}
             {!Followers && (
               <button
                 onClick={() => setFollowers(!followers)}
@@ -32,6 +33,7 @@ function DataCard({ item, width, height, Followers }) {
                 Followers
               </button>
             )}
+            {/* check the presence of the followers and show button  */}
             {!Followers && (
               <button
                 onClick={() => setFollowing(!following)}
@@ -43,6 +45,7 @@ function DataCard({ item, width, height, Followers }) {
           </div>
         </div>
       </div>
+      {/* setting a pop up ui for showing followers and the followings */}
       {followers && (
         <div className="fixed inset-0 bg-black/45 backdrop-blur-sm flex justify-center rounded-md items-center scrollbar-hide">
           <div className="w-[70%] max-h-[80vh] overflow-y-auto bg-gray-900/70 rounded-md relative ">
@@ -65,6 +68,7 @@ function DataCard({ item, width, height, Followers }) {
             >
               ❌
             </button>
+            {/* there we filter the following url and then use it  */}
             <FollowData url={filterUrl(item.following_url)} />
           </div>
         </div>
