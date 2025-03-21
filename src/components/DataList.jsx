@@ -19,6 +19,7 @@ function DataList({ url, user }) {
         // Check cache
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
+          //take data and the time when cached created
           const { data, timestamp } = JSON.parse(cachedData);
           const isExpired = Date.now() - timestamp > CACHE_EXPIRY;
           //check cached data valid or not
@@ -33,8 +34,9 @@ function DataList({ url, user }) {
           }
         }
 
-        // Fetch new data
+        // Fetch data
         const res = await getApi(url);
+        //save data in localstorage with the current time
         localStorage.setItem(
           CACHE_KEY,
           JSON.stringify({ data: res, timestamp: Date.now() })
