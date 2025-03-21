@@ -25,7 +25,8 @@ function DataList({url,user}) {
           if (!isExpired) {
             console.log("Using Cached Data ");
             setData(data);
-            setLoading(false);
+            setTimeout(()=>setLoading(false),300)
+            
             return;
           } else {
             console.log("Cache Expired, Fetching New Data ");
@@ -44,7 +45,7 @@ function DataList({url,user}) {
         setError("Failed to fetch data");
         console.error(err);
       } finally {
-        setLoading(false);
+        setTimeout(()=>setLoading(false),300)
       }
     };
 
@@ -54,11 +55,11 @@ function DataList({url,user}) {
   const filteredData = data.filter((item) =>
     item.login.toLowerCase().includes(search.toLowerCase())
   );
-  if (loading) return <h1 className="text-white">Loading...</h1>;
-  if (error) return <h1 className="text-red-500">{error}</h1>;
+  if (loading) return <div className="w-full h-screen flex justify-center items-center"> <div className=" w-10 h-10 border-t-2 rounded-full fast-spin border-amber-50 "></div></div>;
+  if (error) return <div className="w-full h-screen flex flex-col  gap-10 justify-center text-4xl items-center text-red-500"><div className="text-9xl">👾</div>{error}</div>;
   return (
     
-      <div className=" w-full flex flex-col justify-center items-center text-white">
+      <div className=" w-full flex flex-col justify-center items-center  text-white">
     <div>
       <h1 className=" text-4xl">Hey welcome {user.name}</h1>
     </div>
@@ -66,7 +67,7 @@ function DataList({url,user}) {
       <input
         type="text"
         placeholder="Search User..."
-        className="border-2 border-gray-400/50 w-[70%] p-2"
+        className="border-2 border-gray-400/50 rounded-md w-[70%] p-2"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -74,7 +75,7 @@ function DataList({url,user}) {
     </div>
 
     {filteredData.map((item) => (
-      <DataCard key={item.id}width={200} height={200} item={item} />
+      <DataCard key={item.id} item={item} />
     ))}
   </div>
   )

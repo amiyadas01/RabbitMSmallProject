@@ -1,1 +1,7 @@
 @import "tailwindcss";
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.fast-spin{
+    animation: spin 0.1s linear infinite;
+}
