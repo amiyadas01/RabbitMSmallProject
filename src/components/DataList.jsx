@@ -73,7 +73,7 @@ function DataList({ url, user }) {
   return (
     <div className=" w-full flex flex-col justify-center items-center  text-white">
       <div>
-        <h1 className=" text-4xl">Hey welcome {user.name}</h1>
+        <h1 className=" text-4xl">Hey welcome {user ? user.name : "🤔"}</h1>
       </div>
       <div className=" w-[70%] flex justify-center items-center m-6 gap-11">
         {/* adding input field to search user for filter it */}

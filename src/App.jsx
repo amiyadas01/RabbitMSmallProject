@@ -14,12 +14,17 @@ function App() {
         isAuthenticated ? "h-full" : "h-screen"
       }`}
     >
-      {isAuthenticated ? (<div className="w-full">
-        <DataList url={URL} user={user} /></div>
+      {isAuthenticated ? (
+        <div className="w-full">
+          <DataList url={URL} user={user} />
+        </div>
       ) : (
-        <div className="flex flex-col justify-center items-center gap-10 text-white">
-          <h1 className="text-4xl">Hey you are not Authenticated</h1>
-          <div className=" flex justify-center items-center gap-5">
+        <div className="flex flex-col justify-center items-center gap-10 h-screen relative text-white">
+          <div className=" opacity-50 blur-md pointer-events-none select-none h-screen w-[200%]">
+            <DataList url={URL} />
+          </div>
+          <div className=" flex justify-center flex-col items-center fixed  gap-5">
+          <div className="text-4xl">Hey you are not Authenticated</div>
             Please ! <LoginBtn />
           </div>
         </div>
